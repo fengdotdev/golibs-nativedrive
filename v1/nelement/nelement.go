@@ -5,8 +5,8 @@ type NElement struct {
 	parent   *NElement
 	name     string
 	root     *NElement
+	isRoot   bool
 }
-
 
 
 

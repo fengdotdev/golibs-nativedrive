@@ -1,5 +1,10 @@
 package ndrive
 
+import "github.com/fengdotdev/golibs-nativedrive/interfaces"
+
+var _ interfaces.DirWorker = (*NDrive)(nil)
+
+
 // GetWorkingDir implements ntrait.SudoDrive.
 func (n *NDrive) GetWorkingDir() string {
 	return n.workingDir

@@ -9,7 +9,7 @@ func CreateFileAt(filename string, workingdir string, relativePath string, data 
 
 	fullPath := path.Join(workingdir, relativePath, filename)
 
-	_, err := os.Create()
+	_, err := os.Create(fullPath)
 	if err != nil {
 		return ErrorCreateFileFailed
 	}
@@ -28,9 +28,6 @@ func FileExists(fullPath, filename string) bool {
 	}
 	return true
 }
-
-func 
-
 
 func MakeDir(workingdir string, relativePath string) error {
 	fullPath := path.Join(workingdir, relativePath)

@@ -1,28 +1,32 @@
 package nfile
 
-import "github.com/fengdotdev/golibs-nativedrive/ntrait"
 
-var _ ntrait.File = (*NFile)(nil)
+type NFileType string
+
+const (
+	FileStreamType NFileType = "stream"
+	FileDataType   NFileType = "data"
+)
 
 type NFile struct {
+	isData   bool
+	isStream bool
+	name     string
+	path     string
 }
 
-// GetContent implements trait.File.
 func (n *NFile) GetContent() ([]byte, error) {
 	panic("unimplemented")
 }
 
-// GetName implements trait.File.
 func (n *NFile) GetName() string {
-	panic("unimplemented")
+	return n.name
 }
 
-// GetPath implements trait.File.
 func (n *NFile) GetPath() string {
-	panic("unimplemented")
+	return n.path
 }
 
-// GetSize implements trait.File.
 func (n *NFile) GetSize() int64 {
 	panic("unimplemented")
 }
